@@ -16,7 +16,7 @@ def init(
     save_dir="./runs",
     save_log=True,
     save_code=False,
-    logger_level="DEBUG",
+    logger_level="INFO",
 ):
     """Initialize AgentScope with the given configuration.
 
@@ -38,12 +38,12 @@ def init(
             Whether to save the code snapshot. Defaults to ``False``
             (disabled for personal use to reduce clutter).
         logger_level (str, optional):
-            The logging level. Defaults to ``"DEBUG"`` for more verbose
-            output during development.
+            The logging level. Defaults to ``"INFO"`` to reduce noise
+            in normal usage (use ``"DEBUG"`` for troubleshooting).
     """
     from .manager import ASManager
 
-    ASManager.get_instance().initialize(
+    (
         model_configs=model_configs,
         project=project,
         name=name,
