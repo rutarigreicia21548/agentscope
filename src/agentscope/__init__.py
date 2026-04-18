@@ -43,7 +43,7 @@ def init(
     """
     from .manager import ASManager
 
-    (
+    ASManager.get_instance().initialize(
         model_configs=model_configs,
         project=project,
         name=name,
