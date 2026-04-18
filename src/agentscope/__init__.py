@@ -16,7 +16,7 @@ def init(
     save_dir="./runs",
     save_log=True,
     save_code=False,
-    logger_level="INFO",
+    logger_level="WARNING",
 ):
     """Initialize AgentScope with the given configuration.
 
@@ -38,8 +38,9 @@ def init(
             Whether to save the code snapshot. Defaults to ``False``
             (disabled for personal use to reduce clutter).
         logger_level (str, optional):
-            The logging level. Defaults to ``"INFO"`` to reduce noise
-            in normal usage (use ``"DEBUG"`` for troubleshooting).
+            The logging level. Defaults to ``"WARNING"`` to minimize
+            noise during personal experiments (use ``"INFO"`` or
+            ``"DEBUG"`` for more verbose output).
     """
     from .manager import ASManager
 
